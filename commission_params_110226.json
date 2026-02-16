@@ -1,0 +1,1749 @@
+{
+  "period_type": "Monthly",
+  "end_date": "2025-03-31",
+  "divisions": [
+    "72"
+  ],
+  "json_filename": "commission_params.json",
+  "runtime": {
+    "step4": [
+      {
+        "group_by": [],
+        "metrics": [],
+        "funcs": [],
+        "filters": {},
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "EMPLOYEE_MASTER",
+        "source_path": "Data source: EMPLOYEE_MASTER",
+        "source_filename": "hierarchy_data.csv",
+        "created_at": "2026-02-06T04:09:56Z",
+        "merge_keys_base": [
+          "EMPLOYEE_CODE",
+          "MONTH"
+        ],
+        "merge_keys_right": [
+          "EMPLOYEE_CODE",
+          "MONTH"
+        ],
+        "selected_columns": [
+          "DATE_OF_JOIN"
+        ],
+        "is_merge_only": true
+      },
+      {
+        "group_by": [
+          "TERR_CODE"
+        ],
+        "metrics": [
+          "TARGET",
+          "SALES",
+          "CLAIMS"
+        ],
+        "funcs": [
+          "sum"
+        ],
+        "filters": {
+          "MONTH": [
+            "@END_MONTH@"
+          ]
+        },
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "SALES_DATA",
+        "source_path": "Data source: SALES_DATA",
+        "source_filename": "sales_data_72.csv",
+        "created_at": "2026-02-06T04:14:59Z",
+        "merge_keys_base": [
+          "TERR_CODE"
+        ],
+        "merge_keys_right": [
+          "TERR_CODE"
+        ],
+        "selected_columns": [
+          "TERR_CODE",
+          "MAR_TARGET_SUM",
+          "MAR_SALES_SUM",
+          "MAR_CLAIMS_SUM"
+        ],
+        "is_merge_only": false
+      },
+      {
+        "group_by": [
+          "TERR_CODE"
+        ],
+        "metrics": [
+          "TARGET",
+          "SALES",
+          "CLAIMS"
+        ],
+        "funcs": [
+          "sum"
+        ],
+        "filters": {
+          "MONTH": [
+            "@END_MONTH@"
+          ],
+          "BRAND_CLASS_NAME": [
+            "FOCUS"
+          ]
+        },
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "SALES_DATA",
+        "source_path": "Data source: SALES_DATA",
+        "source_filename": "sales_data_72.csv",
+        "created_at": "2026-02-07T13:08:12Z",
+        "merge_keys_base": [
+          "TERR_CODE"
+        ],
+        "merge_keys_right": [
+          "TERR_CODE"
+        ],
+        "selected_columns": [
+          "TERR_CODE",
+          "MAR_FOCUS_TARGET_SUM",
+          "MAR_FOCUS_SALES_SUM",
+          "MAR_FOCUS_CLAIMS_SUM"
+        ],
+        "is_merge_only": false
+      },
+      {
+        "group_by": [
+          "EMPLOYEE_CODE"
+        ],
+        "metrics": [
+          "TARGET",
+          "SALES",
+          "CLAIMS"
+        ],
+        "funcs": [
+          "sum"
+        ],
+        "filters": {
+          "MONTH": [
+            "@END_MONTH+1@"
+          ]
+        },
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "SALES_DATA",
+        "source_path": "Data source: SALES_DATA",
+        "source_filename": "sales_data_72.csv",
+        "created_at": "2026-02-09T06:16:10Z",
+        "merge_keys_base": [
+          "EMPLOYEE_CODE"
+        ],
+        "merge_keys_right": [
+          "EMPLOYEE_CODE"
+        ],
+        "selected_columns": [
+          "EMPLOYEE_CODE",
+          "APR_TARGET_SUM",
+          "APR_SALES_SUM",
+          "APR_CLAIMS_SUM"
+        ],
+        "is_merge_only": false
+      },
+      {
+        "group_by": [
+          "EMPLOYEE_CODE"
+        ],
+        "metrics": [
+          "TARGET",
+          "SALES",
+          "CLAIMS"
+        ],
+        "funcs": [
+          "sum"
+        ],
+        "filters": {
+          "MONTH": [
+            "@END_MONTH+1@"
+          ],
+          "BRAND_CLASS_NAME": [
+            "FOCUS"
+          ]
+        },
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "SALES_DATA",
+        "source_path": "Data source: SALES_DATA",
+        "source_filename": "sales_data_72.csv",
+        "created_at": "2026-02-09T06:16:38Z",
+        "merge_keys_base": [
+          "EMPLOYEE_CODE"
+        ],
+        "merge_keys_right": [
+          "EMPLOYEE_CODE"
+        ],
+        "selected_columns": [
+          "EMPLOYEE_CODE",
+          "APR_FOCUS_TARGET_SUM",
+          "APR_FOCUS_SALES_SUM",
+          "APR_FOCUS_CLAIMS_SUM"
+        ],
+        "is_merge_only": false
+      },
+      {
+        "group_by": [],
+        "metrics": [],
+        "funcs": [],
+        "filters": {
+          "MONTH": [
+            "@END_MONTH@"
+          ]
+        },
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "MID_MONTH",
+        "source_path": "Data source: MID_MONTH",
+        "source_filename": "Mid Month Data 25.xlsx",
+        "created_at": "2026-02-06T04:18:17Z",
+        "merge_keys_base": [
+          "TERR_CODE"
+        ],
+        "merge_keys_right": [
+          "Hierarchy Code"
+        ],
+        "selected_columns": [
+          "Mid_Month_Sales"
+        ],
+        "is_merge_only": true
+      },
+      {
+        "group_by": [],
+        "metrics": [],
+        "funcs": [],
+        "filters": {
+          "MONTH": [
+            "@END_MONTH@"
+          ]
+        },
+        "filters_num_cond": {},
+        "filters_str_cond": {},
+        "labels_multi": {},
+        "data_source": "SRT",
+        "source_path": "Data source: SRT",
+        "source_filename": "SRT 25.xlsx",
+        "created_at": "2026-02-06T04:18:52Z",
+        "merge_keys_base": [
+          "EMPLOYEE_CODE"
+        ],
+        "merge_keys_right": [
+          "Emp Code"
+        ],
+        "selected_columns": [
+          "Coverage",
+          "L Freq Cov"
+        ],
+        "is_merge_only": true
+      }
+    ],
+    "agg_cols": [
+      {
+        "name": "MAR_TARGET_SUM",
+        "base": "MAR_TARGET",
+        "func": "SUM"
+      },
+      {
+        "name": "MAR_SALES_SUM",
+        "base": "MAR_SALES",
+        "func": "SUM"
+      },
+      {
+        "name": "MAR_CLAIMS_SUM",
+        "base": "MAR_CLAIMS",
+        "func": "SUM"
+      },
+      {
+        "name": "MAR_FOCUS_TARGET_SUM",
+        "base": "MAR_FOCUS_TARGET",
+        "func": "SUM"
+      },
+      {
+        "name": "MAR_FOCUS_SALES_SUM",
+        "base": "MAR_FOCUS_SALES",
+        "func": "SUM"
+      },
+      {
+        "name": "MAR_FOCUS_CLAIMS_SUM",
+        "base": "MAR_FOCUS_CLAIMS",
+        "func": "SUM"
+      },
+      {
+        "name": "APR_TARGET_SUM",
+        "base": "APR_TARGET",
+        "func": "SUM"
+      },
+      {
+        "name": "APR_SALES_SUM",
+        "base": "APR_SALES",
+        "func": "SUM"
+      },
+      {
+        "name": "APR_CLAIMS_SUM",
+        "base": "APR_CLAIMS",
+        "func": "SUM"
+      },
+      {
+        "name": "APR_FOCUS_TARGET_SUM",
+        "base": "APR_FOCUS_TARGET",
+        "func": "SUM"
+      },
+      {
+        "name": "APR_FOCUS_SALES_SUM",
+        "base": "APR_FOCUS_SALES",
+        "func": "SUM"
+      },
+      {
+        "name": "APR_FOCUS_CLAIMS_SUM",
+        "base": "APR_FOCUS_CLAIMS",
+        "func": "SUM"
+      }
+    ],
+    "step5": [
+      {
+        "target_col": "MAR_SALES_ACHV",
+        "prefix": "MAR_SALES",
+        "metric_type": "ACHV",
+        "version": null,
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_SALES_SUM`/ `MAR_TARGET_SUM`*100",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-03T18:55:20Z"
+      },
+      {
+        "target_col": "MAR_CLAIMS_ACHV",
+        "prefix": "MAR_CLAIMS",
+        "metric_type": "ACHV",
+        "version": null,
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_CLAIMS_SUM`/ `MAR_SALES_SUM`*100*(-1)",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-03T18:56:14Z"
+      },
+      {
+        "target_col": "MAR_SALES_PMPM",
+        "prefix": "MAR_SALES",
+        "metric_type": "PMPM",
+        "version": null,
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_SALES_SUM`/ `DEPLOYMENT`",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T13:27:56Z"
+      },
+      {
+        "target_col": "APR_SALES_ACHV",
+        "prefix": "APR_SALES",
+        "metric_type": "ACHV",
+        "version": null,
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`APR_SALES_SUM`/ `APR_TARGET_SUM`*100",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T13:28:47Z"
+      },
+      {
+        "target_col": "MAR_FOCUS_SALES_ACHV",
+        "prefix": "MAR_FOCUS_SALES",
+        "metric_type": "ACHV",
+        "version": null,
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_FOCUS_SALES_SUM`/ `MAR_FOCUS_TARGET_SUM`*100",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T13:32:27Z"
+      },
+      {
+        "target_col": "MAR_SALES_MID_MONTH_ACHV",
+        "prefix": "MAR_SALES",
+        "metric_type": "MID_MONTH_ACHV",
+        "version": null,
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_MID_MONTH_SALES`/ `MAR_TARGET_SUM`*100",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T13:38:17Z"
+      },
+      {
+        "target_col": "MAR_SALES_SUM_V1",
+        "prefix": "MAR_SALES",
+        "metric_type": "SUM",
+        "version": "V1",
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "DESIGNATION: ABM, ZBM; MAR_CLAIMS_ACHV: > 4.5",
+            "formula": "`MAR_SALES_SUM` - ( `MAR_CLAIMS_SUM` * (-1)) * 0.5",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "ABM",
+                "ZBM"
+              ]
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          },
+          {
+            "priority": 2,
+            "filter": "DATE_OF_JOIN: before 15-09-2024; DESIGNATION: TBM; MAR_CLAIMS_ACHV: > 4.5",
+            "formula": "`MAR_SALES_SUM` - ( `MAR_CLAIMS_SUM` * (-1)) * 0.5",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": []
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {},
+            "scope_date_conds": {
+              "DATE_OF_JOIN": {
+                "date_op": "before",
+                "date_value": "15-09-2024"
+              }
+            }
+          },
+          {
+            "priority": 3,
+            "filter": "DATE_OF_JOIN: on or after 15-09-2024; DESIGNATION: TBM; MAR_CLAIMS_ACHV: > 4.5; POOL_CODE: contains(PT)",
+            "formula": "`MAR_SALES_SUM` - ( `MAR_CLAIMS_SUM` * (-1)) * 0.5",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": [],
+              "POOL_CODE": []
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {
+              "POOL_CODE": {
+                "condition": "contains",
+                "value": "PT"
+              }
+            },
+            "scope_date_conds": {
+              "DATE_OF_JOIN": {
+                "date_op": "on or after",
+                "date_value": "15-09-2024"
+              }
+            }
+          },
+          {
+            "priority": 4,
+            "filter": "DATE_OF_JOIN: on or after 15-09-2024; DESIGNATION: TBM; MAR_CLAIMS_ACHV: > 4.5; POOL_CODE: not_contains(PT)",
+            "formula": "`MAR_SALES_SUM`",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": [],
+              "POOL_CODE": []
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {
+              "POOL_CODE": {
+                "condition": "not_contains",
+                "value": "PT"
+              }
+            },
+            "scope_date_conds": {
+              "DATE_OF_JOIN": {
+                "date_op": "on or after",
+                "date_value": "15-09-2024"
+              }
+            }
+          },
+          {
+            "priority": 5,
+            "filter": "ELSE",
+            "formula": "`MAR_SALES_SUM`",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-10T07:26:02Z"
+      },
+      {
+        "target_col": "MAR_SALES_ACHV_V1",
+        "prefix": "MAR_SALES",
+        "metric_type": "ACHV",
+        "version": "V1",
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_SALES_SUM_V1`/ `MAR_TARGET_SUM`*100",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T15:54:48Z"
+      },
+      {
+        "target_col": "MAR_FOCUS_SALES_SUM_V1",
+        "prefix": "MAR_FOCUS_SALES",
+        "metric_type": "SUM",
+        "version": "V1",
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "DATE_OF_JOIN: before 15-09-2024; DESIGNATION: TBM; MAR_CLAIMS_ACHV: > 4.5",
+            "formula": "`MAR_FOCUS_SALES_SUM` - ( `MAR_FOCUS_CLAIMS_SUM` * (-1)) * 0.5",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": []
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {},
+            "scope_date_conds": {
+              "DATE_OF_JOIN": {
+                "date_op": "before",
+                "date_value": "15-09-2024"
+              }
+            }
+          },
+          {
+            "priority": 2,
+            "filter": "DESIGNATION: ABM, ZBM; MAR_CLAIMS_ACHV: > 4.5",
+            "formula": "`MAR_FOCUS_SALES_SUM` - ( `MAR_FOCUS_CLAIMS_SUM` * (-1)) * 0.5",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "ABM",
+                "ZBM"
+              ]
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          },
+          {
+            "priority": 3,
+            "filter": "DATE_OF_JOIN: after 15-09-2024; DESIGNATION: TBM; MAR_CLAIMS_ACHV: > 4.5; POOL_CODE: contains(PT)",
+            "formula": "`MAR_FOCUS_SALES_SUM` - ( `MAR_FOCUS_CLAIMS_SUM` * (-1)) * 0.5",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": [],
+              "POOL_CODE": []
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {
+              "POOL_CODE": {
+                "condition": "contains",
+                "value": "PT"
+              }
+            },
+            "scope_date_conds": {
+              "DATE_OF_JOIN": {
+                "date_op": "after",
+                "date_value": "15-09-2024"
+              }
+            }
+          },
+          {
+            "priority": 4,
+            "filter": "DATE_OF_JOIN: after 15-09-2024; DESIGNATION: TBM; MAR_CLAIMS_ACHV: > 4.5; POOL_CODE: not_contains(PT)",
+            "formula": "`MAR_FOCUS_SALES_SUM`",
+            "scope_filters": {
+              "MAR_CLAIMS_ACHV": [],
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": [],
+              "POOL_CODE": []
+            },
+            "scope_num_conds": {
+              "MAR_CLAIMS_ACHV": "> 4.5"
+            },
+            "scope_str_conds": {
+              "POOL_CODE": {
+                "condition": "not_contains",
+                "value": "PT"
+              }
+            },
+            "scope_date_conds": {
+              "DATE_OF_JOIN": {
+                "date_op": "after",
+                "date_value": "15-09-2024"
+              }
+            }
+          },
+          {
+            "priority": 5,
+            "filter": "ELSE",
+            "formula": "`MAR_FOCUS_SALES_SUM`",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-10T07:31:56Z"
+      },
+      {
+        "target_col": "MAR_FOCUS_SALES_ACHV_V1",
+        "prefix": "MAR_FOCUS_SALES",
+        "metric_type": "ACHV",
+        "version": "V1",
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_FOCUS_SALES_SUM_V1`/ `MAR_FOCUS_TARGET_SUM`*100",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T16:42:09Z"
+      },
+      {
+        "target_col": "MAR_SALES_PMPM_V1",
+        "prefix": "MAR_SALES",
+        "metric_type": "PMPM",
+        "version": "V1",
+        "rules": [
+          {
+            "priority": 1,
+            "filter": "ALL",
+            "formula": "`MAR_SALES_SUM_V1`/ `DEPLOYMENT`",
+            "scope_filters": {},
+            "scope_num_conds": {},
+            "scope_str_conds": {},
+            "scope_date_conds": {}
+          }
+        ],
+        "created_at": "2026-02-07T20:04:24Z"
+      }
+    ],
+    "eligibility_reward": [
+      {
+        "name": "Overall",
+        "apply_mode": "stack",
+        "output_col": "OVERALL",
+        "rule_blocks": [
+          {
+            "applies_filters": {
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": []
+            },
+            "applies_meta": {
+              "DESIGNATION": {
+                "value_map": {
+                  "CD": "CD",
+                  "TBM": "TBM",
+                  "AD": "AD",
+                  "ABM": "ABM",
+                  "NSM": "NSM",
+                  "ZBM": "ZBM"
+                }
+              },
+              "DATE_OF_JOIN": {
+                "value_map": {
+                  "30-12-2019": "30-12-2019",
+                  "01-06-2016": "01-06-2016",
+                  "12-11-2009": "12-11-2009",
+                  "04-02-2016": "04-02-2016",
+                  "30-06-2014": "30-06-2014",
+                  "01-03-2002": "01-03-2002",
+                  "03-08-2018": "03-08-2018",
+                  "29-08-2016": "29-08-2016",
+                  "24-10-2013": "24-10-2013",
+                  "12-03-2020": "12-03-2020",
+                  "30-05-2012": "30-05-2012",
+                  "11-09-2020": "11-09-2020",
+                  "16-02-2015": "16-02-2015",
+                  "20-05-2010": "20-05-2010",
+                  "04-04-2008": "04-04-2008",
+                  "08-03-2008": "08-03-2008",
+                  "16-08-2010": "16-08-2010",
+                  "12-07-2024": "12-07-2024",
+                  "26-12-2017": "26-12-2017",
+                  "24-01-2018": "24-01-2018",
+                  "13-02-2008": "13-02-2008",
+                  "10-08-2004": "10-08-2004",
+                  "18-04-2014": "18-04-2014",
+                  "05-03-2008": "05-03-2008",
+                  "17-01-2005": "17-01-2005",
+                  "01-10-2007": "01-10-2007",
+                  "14-10-2004": "14-10-2004",
+                  "06-07-2021": "06-07-2021",
+                  "23-04-2019": "23-04-2019",
+                  "12-09-2011": "12-09-2011",
+                  "13-01-2023": "13-01-2023",
+                  "01-04-2008": "01-04-2008",
+                  "10-11-2011": "10-11-2011",
+                  "03-10-2023": "03-10-2023",
+                  "10-03-2016": "10-03-2016",
+                  "04-04-2024": "04-04-2024",
+                  "15-09-2004": "15-09-2004",
+                  "02-11-2023": "02-11-2023",
+                  "02-11-2022": "02-11-2022",
+                  "02-06-2015": "02-06-2015",
+                  "13-04-2010": "13-04-2010",
+                  "14-06-2006": "14-06-2006",
+                  "12-03-2021": "12-03-2021",
+                  "24-06-2004": "24-06-2004",
+                  "08-04-2008": "08-04-2008",
+                  "04-02-2008": "04-02-2008",
+                  "19-09-2011": "19-09-2011",
+                  "20-12-2022": "20-12-2022",
+                  "01-04-2021": "01-04-2021",
+                  "22-08-2013": "22-08-2013",
+                  "13-07-2023": "13-07-2023",
+                  "04-09-2013": "04-09-2013",
+                  "22-09-1997": "22-09-1997",
+                  "24-04-2007": "24-04-2007",
+                  "13-03-2024": "13-03-2024",
+                  "15-05-2024": "15-05-2024",
+                  "12-01-2018": "12-01-2018",
+                  "09-11-2011": "09-11-2011",
+                  "16-11-2001": "16-11-2001",
+                  "08-12-2016": "08-12-2016",
+                  "09-02-2008": "09-02-2008",
+                  "07-06-2004": "07-06-2004",
+                  "02-06-2017": "02-06-2017",
+                  "09-06-2014": "09-06-2014",
+                  "21-10-2009": "21-10-2009",
+                  "07-11-2013": "07-11-2013",
+                  "07-03-2012": "07-03-2012",
+                  "07-12-2006": "07-12-2006",
+                  "26-10-2012": "26-10-2012",
+                  "26-09-2013": "26-09-2013",
+                  "16-11-2013": "16-11-2013",
+                  "10-08-2023": "10-08-2023",
+                  "05-07-2023": "05-07-2023",
+                  "20-05-2011": "20-05-2011",
+                  "05-09-2023": "05-09-2023",
+                  "20-05-1991": "20-05-1991",
+                  "24-06-2022": "24-06-2022",
+                  "09-04-2007": "09-04-2007",
+                  "02-05-2024": "02-05-2024",
+                  "13-06-2017": "13-06-2017",
+                  "29-11-2013": "29-11-2013",
+                  "07-08-2014": "07-08-2014",
+                  "21-09-2023": "21-09-2023",
+                  "03-01-2025": "03-01-2025",
+                  "05-01-2023": "05-01-2023",
+                  "19-08-2015": "19-08-2015",
+                  "06-02-2024": "06-02-2024",
+                  "12-03-2019": "12-03-2019",
+                  "05-03-2025": "05-03-2025",
+                  "10-02-2014": "10-02-2014",
+                  "13-09-2023": "13-09-2023",
+                  "15-02-2017": "15-02-2017",
+                  "01-12-2022": "01-12-2022",
+                  "25-06-2018": "25-06-2018",
+                  "04-05-2021": "04-05-2021",
+                  "03-02-2017": "03-02-2017",
+                  "24-11-2009": "24-11-2009",
+                  "13-02-2024": "13-02-2024",
+                  "11-01-2024": "11-01-2024",
+                  "04-09-2024": "04-09-2024",
+                  "07-01-2016": "07-01-2016",
+                  "04-12-2008": "04-12-2008",
+                  "12-10-2018": "12-10-2018",
+                  "01-09-2014": "01-09-2014",
+                  "12-01-2021": "12-01-2021",
+                  "22-11-2011": "22-11-2011",
+                  "16-02-2009": "16-02-2009",
+                  "10-07-2012": "10-07-2012",
+                  "21-01-2013": "21-01-2013",
+                  "27-02-2015": "27-02-2015",
+                  "11-11-2019": "11-11-2019",
+                  "31-05-2007": "31-05-2007",
+                  "03-12-2013": "03-12-2013",
+                  "01-09-2008": "01-09-2008",
+                  "16-04-2015": "16-04-2015",
+                  "09-01-2014": "09-01-2014",
+                  "02-01-2024": "02-01-2024",
+                  "01-08-2008": "01-08-2008",
+                  "19-06-1995": "19-06-1995",
+                  "13-06-2023": "13-06-2023",
+                  "19-03-2013": "19-03-2013",
+                  "02-03-2017": "02-03-2017",
+                  "15-11-2010": "15-11-2010",
+                  "02-06-2023": "02-06-2023",
+                  "16-11-2011": "16-11-2011",
+                  "30-03-2009": "30-03-2009",
+                  "29-05-2012": "29-05-2012",
+                  "12-08-2022": "12-08-2022",
+                  "14-03-2017": "14-03-2017",
+                  "17-06-2011": "17-06-2011",
+                  "22-04-2022": "22-04-2022",
+                  "03-09-2004": "03-09-2004",
+                  "04-06-2021": "04-06-2021",
+                  "29-06-2013": "29-06-2013",
+                  "13-09-2024": "13-09-2024",
+                  "07-03-2007": "07-03-2007",
+                  "30-11-2013": "30-11-2013",
+                  "16-05-2016": "16-05-2016",
+                  "11-04-2017": "11-04-2017",
+                  "27-01-2014": "27-01-2014",
+                  "04-02-2025": "04-02-2025",
+                  "25-10-2006": "25-10-2006",
+                  "05-03-2024": "05-03-2024",
+                  "03-05-2008": "03-05-2008",
+                  "04-11-2019": "04-11-2019",
+                  "04-05-2015": "04-05-2015",
+                  "05-01-2017": "05-01-2017",
+                  "05-04-2017": "05-04-2017",
+                  "15-09-2008": "15-09-2008",
+                  "01-08-2009": "01-08-2009",
+                  "10-11-2023": "10-11-2023",
+                  "12-01-2013": "12-01-2013",
+                  "10-04-2012": "10-04-2012",
+                  "02-08-2023": "02-08-2023",
+                  "05-02-2014": "05-02-2014",
+                  "03-10-2007": "03-10-2007",
+                  "02-03-2023": "02-03-2023",
+                  "13-04-2017": "13-04-2017",
+                  "07-08-2024": "07-08-2024",
+                  "22-06-2009": "22-06-2009",
+                  "20-11-2006": "20-11-2006",
+                  "02-12-2013": "02-12-2013",
+                  "25-07-2023": "25-07-2023",
+                  "03-12-2024": "03-12-2024",
+                  "10-08-2006": "10-08-2006",
+                  "07-11-1994": "07-11-1994",
+                  "03-04-2018": "03-04-2018",
+                  "23-04-2021": "23-04-2021",
+                  "27-06-2012": "27-06-2012",
+                  "08-10-2021": "08-10-2021",
+                  "14-06-2022": "14-06-2022",
+                  "25-02-2025": "25-02-2025",
+                  "27-11-2014": "27-11-2014",
+                  "08-05-2008": "08-05-2008",
+                  "09-11-2013": "09-11-2013",
+                  "03-03-2022": "03-03-2022",
+                  "01-12-2008": "01-12-2008",
+                  "05-04-2012": "05-04-2012",
+                  "05-11-2024": "05-11-2024",
+                  "03-04-2011": "03-04-2011",
+                  "02-08-2019": "02-08-2019",
+                  "24-04-2013": "24-04-2013",
+                  "02-01-2019": "02-01-2019",
+                  "09-06-2009": "09-06-2009",
+                  "02-12-2015": "02-12-2015",
+                  "17-12-2013": "17-12-2013",
+                  "08-03-2005": "08-03-2005",
+                  "02-05-2016": "02-05-2016",
+                  "25-06-2024": "25-06-2024",
+                  "23-08-2022": "23-08-2022",
+                  "18-01-2012": "18-01-2012",
+                  "13-03-2025": "13-03-2025",
+                  "18-05-2007": "18-05-2007",
+                  "11-10-2023": "11-10-2023",
+                  "11-02-2021": "11-02-2021",
+                  "12-12-2024": "12-12-2024",
+                  "06-08-2009": "06-08-2009",
+                  "18-02-2008": "18-02-2008",
+                  "10-08-2016": "10-08-2016",
+                  "18-03-2016": "18-03-2016",
+                  "03-06-2014": "03-06-2014",
+                  "07-03-2014": "07-03-2014",
+                  "07-03-2008": "07-03-2008",
+                  "28-09-2012": "28-09-2012",
+                  "12-02-2019": "12-02-2019",
+                  "05-02-2010": "05-02-2010",
+                  "17-01-2017": "17-01-2017",
+                  "03-02-2014": "03-02-2014",
+                  "05-06-2007": "05-06-2007",
+                  "22-02-2019": "22-02-2019",
+                  "05-04-2023": "05-04-2023"
+                },
+                "date_op": "before",
+                "date_value": "01-12-2024"
+              }
+            },
+            "eligibility_conds": [
+              {
+                "col": "MAR_SALES_ACHV_V1",
+                "op": ">=",
+                "val": "99.5",
+                "join": "AND"
+              },
+              {
+                "col": "APR_SALES_ACHV",
+                "op": ">=",
+                "val": "94.5",
+                "join": "AND"
+              }
+            ],
+            "eligibility_rule_structure": {
+              "type": "group",
+              "operator": "AND",
+              "items": [
+                {
+                  "type": "rule",
+                  "field": "MAR_SALES_ACHV_V1",
+                  "operator": ">=",
+                  "value": "99.5"
+                },
+                {
+                  "type": "rule",
+                  "field": "APR_SALES_ACHV",
+                  "operator": ">=",
+                  "value": "94.5"
+                }
+              ]
+            },
+            "reward_method": "Slab Based Payout",
+            "param_overrides": [],
+            "value_slab_param": "MAR_SALES_PMPM_V1",
+            "achievement_slab_param": "MAR_SALES_ACHV_V1",
+            "slab_matrix": {
+              "row_values": [
+                -999999.0,
+                300000.0,
+                450000.0,
+                600000.0,
+                750000.0,
+                999999.0
+              ],
+              "col_values": [
+                99.5,
+                100.5,
+                101.5,
+                102.5,
+                103.5,
+                104.5,
+                105.5,
+                109.5,
+                9999.0
+              ],
+              "matrix": {
+                "-999999.0_99.5": "4000",
+                "-999999.0_100.5": "4200",
+                "-999999.0_101.5": "4500",
+                "-999999.0_102.5": "4700",
+                "-999999.0_103.5": "4900",
+                "-999999.0_104.5": "5100",
+                "-999999.0_105.5": "5500",
+                "-999999.0_109.5": "6500",
+                "-999999.0_9999.0": "6500",
+                "300000.0_99.5": "5000",
+                "300000.0_100.5": "5200",
+                "300000.0_101.5": "5400",
+                "300000.0_102.5": "5600",
+                "300000.0_103.5": "5800",
+                "300000.0_104.5": "6000",
+                "300000.0_105.5": "6600",
+                "300000.0_109.5": "7700",
+                "300000.0_9999.0": "7700",
+                "450000.0_99.5": "5900",
+                "450000.0_100.5": "6100",
+                "450000.0_101.5": "6300",
+                "450000.0_102.5": "6500",
+                "450000.0_103.5": "6700",
+                "450000.0_104.5": "6900",
+                "450000.0_105.5": "7600",
+                "450000.0_109.5": "8800",
+                "450000.0_9999.0": "8800",
+                "600000.0_99.5": "7200",
+                "600000.0_100.5": "7400",
+                "600000.0_101.5": "7600",
+                "600000.0_102.5": "7800",
+                "600000.0_103.5": "8000",
+                "600000.0_104.5": "8200",
+                "600000.0_105.5": "9000",
+                "600000.0_109.5": "10500",
+                "600000.0_9999.0": "10500",
+                "750000.0_99.5": "9800",
+                "750000.0_100.5": "10000",
+                "750000.0_101.5": "10200",
+                "750000.0_102.5": "10400",
+                "750000.0_103.5": "10600",
+                "750000.0_104.5": "10800",
+                "750000.0_105.5": "11900",
+                "750000.0_109.5": "13900",
+                "750000.0_9999.0": "13900",
+                "999999.0_99.5": "9800",
+                "999999.0_100.5": "10000",
+                "999999.0_101.5": "10200",
+                "999999.0_102.5": "10400",
+                "999999.0_103.5": "10600",
+                "999999.0_104.5": "10800",
+                "999999.0_105.5": "11900",
+                "999999.0_109.5": "13900",
+                "999999.0_9999.0": "13900"
+              }
+            },
+            "deductions": [],
+            "deduction_logic_sets": [
+              {
+                "structure": {
+                  "type": "group",
+                  "operator": "OR",
+                  "items": [
+                    {
+                      "type": "rule",
+                      "field": "MAR_COVERAGE",
+                      "operator": "<",
+                      "value": "89.5"
+                    },
+                    {
+                      "type": "rule",
+                      "field": "MAR_L_FREQ_COV",
+                      "operator": "<",
+                      "value": "89.5"
+                    }
+                  ]
+                },
+                "multiplier": 0.9
+              }
+            ]
+          },
+          {
+            "applies_filters": {
+              "DESIGNATION": [
+                "TBM"
+              ],
+              "DATE_OF_JOIN": []
+            },
+            "applies_meta": {
+              "DESIGNATION": {
+                "value_map": {
+                  "CD": "CD",
+                  "TBM": "TBM",
+                  "AD": "AD",
+                  "ABM": "ABM",
+                  "NSM": "NSM",
+                  "ZBM": "ZBM"
+                }
+              },
+              "DATE_OF_JOIN": {
+                "value_map": {
+                  "30-12-2019": "30-12-2019",
+                  "01-06-2016": "01-06-2016",
+                  "12-11-2009": "12-11-2009",
+                  "04-02-2016": "04-02-2016",
+                  "30-06-2014": "30-06-2014",
+                  "01-03-2002": "01-03-2002",
+                  "03-08-2018": "03-08-2018",
+                  "29-08-2016": "29-08-2016",
+                  "24-10-2013": "24-10-2013",
+                  "12-03-2020": "12-03-2020",
+                  "30-05-2012": "30-05-2012",
+                  "11-09-2020": "11-09-2020",
+                  "16-02-2015": "16-02-2015",
+                  "20-05-2010": "20-05-2010",
+                  "04-04-2008": "04-04-2008",
+                  "08-03-2008": "08-03-2008",
+                  "16-08-2010": "16-08-2010",
+                  "12-07-2024": "12-07-2024",
+                  "26-12-2017": "26-12-2017",
+                  "24-01-2018": "24-01-2018",
+                  "13-02-2008": "13-02-2008",
+                  "10-08-2004": "10-08-2004",
+                  "18-04-2014": "18-04-2014",
+                  "05-03-2008": "05-03-2008",
+                  "17-01-2005": "17-01-2005",
+                  "01-10-2007": "01-10-2007",
+                  "14-10-2004": "14-10-2004",
+                  "06-07-2021": "06-07-2021",
+                  "23-04-2019": "23-04-2019",
+                  "12-09-2011": "12-09-2011",
+                  "13-01-2023": "13-01-2023",
+                  "01-04-2008": "01-04-2008",
+                  "10-11-2011": "10-11-2011",
+                  "03-10-2023": "03-10-2023",
+                  "10-03-2016": "10-03-2016",
+                  "04-04-2024": "04-04-2024",
+                  "15-09-2004": "15-09-2004",
+                  "02-11-2023": "02-11-2023",
+                  "02-11-2022": "02-11-2022",
+                  "02-06-2015": "02-06-2015",
+                  "13-04-2010": "13-04-2010",
+                  "14-06-2006": "14-06-2006",
+                  "12-03-2021": "12-03-2021",
+                  "24-06-2004": "24-06-2004",
+                  "08-04-2008": "08-04-2008",
+                  "04-02-2008": "04-02-2008",
+                  "19-09-2011": "19-09-2011",
+                  "20-12-2022": "20-12-2022",
+                  "01-04-2021": "01-04-2021",
+                  "22-08-2013": "22-08-2013",
+                  "13-07-2023": "13-07-2023",
+                  "04-09-2013": "04-09-2013",
+                  "22-09-1997": "22-09-1997",
+                  "24-04-2007": "24-04-2007",
+                  "13-03-2024": "13-03-2024",
+                  "15-05-2024": "15-05-2024",
+                  "12-01-2018": "12-01-2018",
+                  "09-11-2011": "09-11-2011",
+                  "16-11-2001": "16-11-2001",
+                  "08-12-2016": "08-12-2016",
+                  "09-02-2008": "09-02-2008",
+                  "07-06-2004": "07-06-2004",
+                  "02-06-2017": "02-06-2017",
+                  "09-06-2014": "09-06-2014",
+                  "21-10-2009": "21-10-2009",
+                  "07-11-2013": "07-11-2013",
+                  "07-03-2012": "07-03-2012",
+                  "07-12-2006": "07-12-2006",
+                  "26-10-2012": "26-10-2012",
+                  "26-09-2013": "26-09-2013",
+                  "16-11-2013": "16-11-2013",
+                  "10-08-2023": "10-08-2023",
+                  "05-07-2023": "05-07-2023",
+                  "20-05-2011": "20-05-2011",
+                  "05-09-2023": "05-09-2023",
+                  "20-05-1991": "20-05-1991",
+                  "24-06-2022": "24-06-2022",
+                  "09-04-2007": "09-04-2007",
+                  "02-05-2024": "02-05-2024",
+                  "13-06-2017": "13-06-2017",
+                  "29-11-2013": "29-11-2013",
+                  "07-08-2014": "07-08-2014",
+                  "21-09-2023": "21-09-2023",
+                  "03-01-2025": "03-01-2025",
+                  "05-01-2023": "05-01-2023",
+                  "19-08-2015": "19-08-2015",
+                  "06-02-2024": "06-02-2024",
+                  "12-03-2019": "12-03-2019",
+                  "05-03-2025": "05-03-2025",
+                  "10-02-2014": "10-02-2014",
+                  "13-09-2023": "13-09-2023",
+                  "15-02-2017": "15-02-2017",
+                  "01-12-2022": "01-12-2022",
+                  "25-06-2018": "25-06-2018",
+                  "04-05-2021": "04-05-2021",
+                  "03-02-2017": "03-02-2017",
+                  "24-11-2009": "24-11-2009",
+                  "13-02-2024": "13-02-2024",
+                  "11-01-2024": "11-01-2024",
+                  "04-09-2024": "04-09-2024",
+                  "07-01-2016": "07-01-2016",
+                  "04-12-2008": "04-12-2008",
+                  "12-10-2018": "12-10-2018",
+                  "01-09-2014": "01-09-2014",
+                  "12-01-2021": "12-01-2021",
+                  "22-11-2011": "22-11-2011",
+                  "16-02-2009": "16-02-2009",
+                  "10-07-2012": "10-07-2012",
+                  "21-01-2013": "21-01-2013",
+                  "27-02-2015": "27-02-2015",
+                  "11-11-2019": "11-11-2019",
+                  "31-05-2007": "31-05-2007",
+                  "03-12-2013": "03-12-2013",
+                  "01-09-2008": "01-09-2008",
+                  "16-04-2015": "16-04-2015",
+                  "09-01-2014": "09-01-2014",
+                  "02-01-2024": "02-01-2024",
+                  "01-08-2008": "01-08-2008",
+                  "19-06-1995": "19-06-1995",
+                  "13-06-2023": "13-06-2023",
+                  "19-03-2013": "19-03-2013",
+                  "02-03-2017": "02-03-2017",
+                  "15-11-2010": "15-11-2010",
+                  "02-06-2023": "02-06-2023",
+                  "16-11-2011": "16-11-2011",
+                  "30-03-2009": "30-03-2009",
+                  "29-05-2012": "29-05-2012",
+                  "12-08-2022": "12-08-2022",
+                  "14-03-2017": "14-03-2017",
+                  "17-06-2011": "17-06-2011",
+                  "22-04-2022": "22-04-2022",
+                  "03-09-2004": "03-09-2004",
+                  "04-06-2021": "04-06-2021",
+                  "29-06-2013": "29-06-2013",
+                  "13-09-2024": "13-09-2024",
+                  "07-03-2007": "07-03-2007",
+                  "30-11-2013": "30-11-2013",
+                  "16-05-2016": "16-05-2016",
+                  "11-04-2017": "11-04-2017",
+                  "27-01-2014": "27-01-2014",
+                  "04-02-2025": "04-02-2025",
+                  "25-10-2006": "25-10-2006",
+                  "05-03-2024": "05-03-2024",
+                  "03-05-2008": "03-05-2008",
+                  "04-11-2019": "04-11-2019",
+                  "04-05-2015": "04-05-2015",
+                  "05-01-2017": "05-01-2017",
+                  "05-04-2017": "05-04-2017",
+                  "15-09-2008": "15-09-2008",
+                  "01-08-2009": "01-08-2009",
+                  "10-11-2023": "10-11-2023",
+                  "12-01-2013": "12-01-2013",
+                  "10-04-2012": "10-04-2012",
+                  "02-08-2023": "02-08-2023",
+                  "05-02-2014": "05-02-2014",
+                  "03-10-2007": "03-10-2007",
+                  "02-03-2023": "02-03-2023",
+                  "13-04-2017": "13-04-2017",
+                  "07-08-2024": "07-08-2024",
+                  "22-06-2009": "22-06-2009",
+                  "20-11-2006": "20-11-2006",
+                  "02-12-2013": "02-12-2013",
+                  "25-07-2023": "25-07-2023",
+                  "03-12-2024": "03-12-2024",
+                  "10-08-2006": "10-08-2006",
+                  "07-11-1994": "07-11-1994",
+                  "03-04-2018": "03-04-2018",
+                  "23-04-2021": "23-04-2021",
+                  "27-06-2012": "27-06-2012",
+                  "08-10-2021": "08-10-2021",
+                  "14-06-2022": "14-06-2022",
+                  "25-02-2025": "25-02-2025",
+                  "27-11-2014": "27-11-2014",
+                  "08-05-2008": "08-05-2008",
+                  "09-11-2013": "09-11-2013",
+                  "03-03-2022": "03-03-2022",
+                  "01-12-2008": "01-12-2008",
+                  "05-04-2012": "05-04-2012",
+                  "05-11-2024": "05-11-2024",
+                  "03-04-2011": "03-04-2011",
+                  "02-08-2019": "02-08-2019",
+                  "24-04-2013": "24-04-2013",
+                  "02-01-2019": "02-01-2019",
+                  "09-06-2009": "09-06-2009",
+                  "02-12-2015": "02-12-2015",
+                  "17-12-2013": "17-12-2013",
+                  "08-03-2005": "08-03-2005",
+                  "02-05-2016": "02-05-2016",
+                  "25-06-2024": "25-06-2024",
+                  "23-08-2022": "23-08-2022",
+                  "18-01-2012": "18-01-2012",
+                  "13-03-2025": "13-03-2025",
+                  "18-05-2007": "18-05-2007",
+                  "11-10-2023": "11-10-2023",
+                  "11-02-2021": "11-02-2021",
+                  "12-12-2024": "12-12-2024",
+                  "06-08-2009": "06-08-2009",
+                  "18-02-2008": "18-02-2008",
+                  "10-08-2016": "10-08-2016",
+                  "18-03-2016": "18-03-2016",
+                  "03-06-2014": "03-06-2014",
+                  "07-03-2014": "07-03-2014",
+                  "07-03-2008": "07-03-2008",
+                  "28-09-2012": "28-09-2012",
+                  "12-02-2019": "12-02-2019",
+                  "05-02-2010": "05-02-2010",
+                  "17-01-2017": "17-01-2017",
+                  "03-02-2014": "03-02-2014",
+                  "05-06-2007": "05-06-2007",
+                  "22-02-2019": "22-02-2019",
+                  "05-04-2023": "05-04-2023"
+                },
+                "date_op": "on or after",
+                "date_value": "02-12-2024"
+              }
+            },
+            "eligibility_conds": [
+              {
+                "col": "MAR_SALES_ACHV_V1",
+                "op": ">=",
+                "val": "99.5",
+                "join": "AND"
+              },
+              {
+                "col": "APR_SALES_ACHV",
+                "op": ">=",
+                "val": "94.5",
+                "join": "AND"
+              }
+            ],
+            "eligibility_rule_structure": {
+              "type": "group",
+              "operator": "AND",
+              "items": [
+                {
+                  "type": "rule",
+                  "field": "MAR_SALES_ACHV_V1",
+                  "operator": ">=",
+                  "value": "99.5"
+                },
+                {
+                  "type": "rule",
+                  "field": "APR_SALES_ACHV",
+                  "operator": ">=",
+                  "value": "94.5"
+                }
+              ]
+            },
+            "reward_method": "Slab Based Payout",
+            "param_overrides": [],
+            "value_slab_param": "MAR_SALES_PMPM_V1",
+            "achievement_slab_param": "MAR_SALES_ACHV_V1",
+            "slab_matrix": {
+              "row_values": [
+                -999999.0,
+                300000.0,
+                450000.0,
+                600000.0,
+                750000.0,
+                999999.0
+              ],
+              "col_values": [
+                99.5,
+                100.5,
+                101.5,
+                102.5,
+                103.5,
+                104.5,
+                105.5,
+                109.5,
+                9999.0
+              ],
+              "matrix": {
+                "-999999.0_99.5": "4000",
+                "-999999.0_100.5": "4200",
+                "-999999.0_101.5": "4500",
+                "-999999.0_102.5": "4700",
+                "-999999.0_103.5": "4900",
+                "-999999.0_104.5": "5100",
+                "-999999.0_105.5": "5500",
+                "-999999.0_109.5": "6500",
+                "-999999.0_9999.0": "6500",
+                "300000.0_99.5": "5000",
+                "300000.0_100.5": "5200",
+                "300000.0_101.5": "5400",
+                "300000.0_102.5": "5600",
+                "300000.0_103.5": "5800",
+                "300000.0_104.5": "6000",
+                "300000.0_105.5": "6600",
+                "300000.0_109.5": "7700",
+                "300000.0_9999.0": "7700",
+                "450000.0_99.5": "5900",
+                "450000.0_100.5": "6100",
+                "450000.0_101.5": "6300",
+                "450000.0_102.5": "6500",
+                "450000.0_103.5": "6700",
+                "450000.0_104.5": "6900",
+                "450000.0_105.5": "7600",
+                "450000.0_109.5": "8800",
+                "450000.0_9999.0": "8800",
+                "600000.0_99.5": "7200",
+                "600000.0_100.5": "7400",
+                "600000.0_101.5": "7600",
+                "600000.0_102.5": "7800",
+                "600000.0_103.5": "8000",
+                "600000.0_104.5": "8200",
+                "600000.0_105.5": "9000",
+                "600000.0_109.5": "10500",
+                "600000.0_9999.0": "10500",
+                "750000.0_99.5": "9800",
+                "750000.0_100.5": "10000",
+                "750000.0_101.5": "10200",
+                "750000.0_102.5": "10400",
+                "750000.0_103.5": "10600",
+                "750000.0_104.5": "10800",
+                "750000.0_105.5": "11900",
+                "750000.0_109.5": "13900",
+                "750000.0_9999.0": "13900",
+                "999999.0_99.5": "9800",
+                "999999.0_100.5": "10000",
+                "999999.0_101.5": "10200",
+                "999999.0_102.5": "10400",
+                "999999.0_103.5": "10600",
+                "999999.0_104.5": "10800",
+                "999999.0_105.5": "11900",
+                "999999.0_109.5": "13900",
+                "999999.0_9999.0": "13900"
+              }
+            },
+            "deductions": []
+          },
+          {
+            "applies_filters": {
+              "DESIGNATION": [
+                "ABM"
+              ]
+            },
+            "applies_meta": {
+              "DESIGNATION": {
+                "value_map": {
+                  "CD": "CD",
+                  "TBM": "TBM",
+                  "AD": "AD",
+                  "ABM": "ABM",
+                  "NSM": "NSM",
+                  "ZBM": "ZBM"
+                }
+              }
+            },
+            "eligibility_conds": [
+              {
+                "col": "APR_SALES_ACHV",
+                "op": ">=",
+                "val": "94.5",
+                "join": "AND"
+              },
+              {
+                "col": "MAR_SALES_ACHV_V1",
+                "op": ">=",
+                "val": "99.5",
+                "join": "AND"
+              }
+            ],
+            "eligibility_rule_structure": {
+              "type": "group",
+              "operator": "AND",
+              "items": [
+                {
+                  "type": "rule",
+                  "field": "APR_SALES_ACHV",
+                  "operator": ">=",
+                  "value": "94.5"
+                },
+                {
+                  "type": "rule",
+                  "field": "MAR_SALES_ACHV_V1",
+                  "operator": ">=",
+                  "value": "99.5"
+                }
+              ]
+            },
+            "reward_method": "Slab Based Payout",
+            "param_overrides": [],
+            "value_slab_param": "MAR_SALES_PMPM_V1",
+            "achievement_slab_param": "MAR_SALES_ACHV_V1",
+            "slab_matrix": {
+              "row_values": [
+                -999999.0,
+                300000.0,
+                450000.0,
+                600000.0,
+                750000.0,
+                999999.0
+              ],
+              "col_values": [
+                99.5,
+                100.5,
+                101.5,
+                102.5,
+                103.5,
+                104.5,
+                105.5,
+                109.5,
+                9999.0
+              ],
+              "matrix": {
+                "-999999.0_99.5": "5400",
+                "-999999.0_100.5": "6150",
+                "-999999.0_101.5": "6450",
+                "-999999.0_102.5": "6750",
+                "-999999.0_103.5": "7050",
+                "-999999.0_104.5": "7350",
+                "-999999.0_105.5": "8100",
+                "-999999.0_109.5": "9600",
+                "-999999.0_9999.0": "9600",
+                "300000.0_99.5": "6750",
+                "300000.0_100.5": "9750",
+                "300000.0_101.5": "10050",
+                "300000.0_102.5": "10350",
+                "300000.0_103.5": "10650",
+                "300000.0_104.5": "10950",
+                "300000.0_105.5": "12000",
+                "300000.0_109.5": "14250",
+                "300000.0_9999.0": "14250",
+                "450000.0_99.5": "8100",
+                "450000.0_100.5": "11850",
+                "450000.0_101.5": "12150",
+                "450000.0_102.5": "12450",
+                "450000.0_103.5": "12750",
+                "450000.0_104.5": "13050",
+                "450000.0_105.5": "14400",
+                "450000.0_109.5": "16950",
+                "450000.0_9999.0": "16950",
+                "600000.0_99.5": "10050",
+                "600000.0_100.5": "13500",
+                "600000.0_101.5": "13800",
+                "600000.0_102.5": "14100",
+                "600000.0_103.5": "14400",
+                "600000.0_104.5": "14700",
+                "600000.0_105.5": "16050",
+                "600000.0_109.5": "19350",
+                "600000.0_9999.0": "19350",
+                "750000.0_99.5": "13950",
+                "750000.0_100.5": "15300",
+                "750000.0_101.5": "15450",
+                "750000.0_102.5": "15750",
+                "750000.0_103.5": "15900",
+                "750000.0_104.5": "16200",
+                "750000.0_105.5": "16800",
+                "750000.0_109.5": "20850",
+                "750000.0_9999.0": "20850",
+                "999999.0_99.5": "13950",
+                "999999.0_100.5": "15300",
+                "999999.0_101.5": "15450",
+                "999999.0_102.5": "15750",
+                "999999.0_103.5": "15900",
+                "999999.0_104.5": "16200",
+                "999999.0_105.5": "16800",
+                "999999.0_109.5": "20850",
+                "999999.0_9999.0": "20850"
+              }
+            },
+            "deductions": [],
+            "deduction_logic_sets": [
+              {
+                "structure": {
+                  "type": "group",
+                  "operator": "OR",
+                  "items": [
+                    {
+                      "type": "rule",
+                      "field": "MAR_COVERAGE",
+                      "operator": "<",
+                      "value": "89.5"
+                    },
+                    {
+                      "type": "rule",
+                      "field": "MAR_L_FREQ_COV",
+                      "operator": "<",
+                      "value": "89.5"
+                    }
+                  ]
+                },
+                "multiplier": 0.9
+              }
+            ]
+          },
+          {
+            "applies_filters": {
+              "DESIGNATION": [
+                "ZBM"
+              ]
+            },
+            "applies_meta": {
+              "DESIGNATION": {
+                "value_map": {
+                  "CD": "CD",
+                  "TBM": "TBM",
+                  "AD": "AD",
+                  "ABM": "ABM",
+                  "NSM": "NSM",
+                  "ZBM": "ZBM"
+                }
+              }
+            },
+            "eligibility_conds": [
+              {
+                "col": "MAR_SALES_ACHV_V1",
+                "op": ">=",
+                "val": "99.5",
+                "join": "AND"
+              },
+              {
+                "col": "APR_SALES_ACHV",
+                "op": ">=",
+                "val": "94.5",
+                "join": "AND"
+              }
+            ],
+            "eligibility_rule_structure": {
+              "type": "group",
+              "operator": "AND",
+              "items": [
+                {
+                  "type": "rule",
+                  "field": "MAR_SALES_ACHV_V1",
+                  "operator": ">=",
+                  "value": "99.5"
+                },
+                {
+                  "type": "rule",
+                  "field": "APR_SALES_ACHV",
+                  "operator": ">=",
+                  "value": "94.5"
+                }
+              ]
+            },
+            "reward_method": "Slab Based Payout",
+            "param_overrides": [],
+            "value_slab_param": "MAR_SALES_PMPM_V1",
+            "achievement_slab_param": "MAR_SALES_ACHV_V1",
+            "slab_matrix": {
+              "row_values": [
+                -999999.0,
+                300000.0,
+                450000.0,
+                600000.0,
+                750000.0,
+                999999.0
+              ],
+              "col_values": [
+                99.5,
+                100.5,
+                101.5,
+                102.5,
+                103.5,
+                104.5,
+                105.5,
+                109.5,
+                9999.0
+              ],
+              "matrix": {
+                "-999999.0_99.5": "7200",
+                "-999999.0_100.5": "8200",
+                "-999999.0_101.5": "8600",
+                "-999999.0_102.5": "9000",
+                "-999999.0_103.5": "9400",
+                "-999999.0_104.5": "9800",
+                "-999999.0_105.5": "10800",
+                "-999999.0_109.5": "12800",
+                "-999999.0_9999.0": "12800",
+                "300000.0_99.5": "9000",
+                "300000.0_100.5": "13000",
+                "300000.0_101.5": "13400",
+                "300000.0_102.5": "13800",
+                "300000.0_103.5": "14200",
+                "300000.0_104.5": "14600",
+                "300000.0_105.5": "16000",
+                "300000.0_109.5": "19000",
+                "300000.0_9999.0": "19000",
+                "450000.0_99.5": "10800",
+                "450000.0_100.5": "15800",
+                "450000.0_101.5": "16200",
+                "450000.0_102.5": "16600",
+                "450000.0_103.5": "17000",
+                "450000.0_104.5": "17400",
+                "450000.0_105.5": "19200",
+                "450000.0_109.5": "22600",
+                "450000.0_9999.0": "22600",
+                "600000.0_99.5": "13400",
+                "600000.0_100.5": "18000",
+                "600000.0_101.5": "18400",
+                "600000.0_102.5": "18800",
+                "600000.0_103.5": "19200",
+                "600000.0_104.5": "19600",
+                "600000.0_105.5": "21400",
+                "600000.0_109.5": "25800",
+                "600000.0_9999.0": "25800",
+                "750000.0_99.5": "18600",
+                "750000.0_100.5": "20400",
+                "750000.0_101.5": "20600",
+                "750000.0_102.5": "21000",
+                "750000.0_103.5": "21200",
+                "750000.0_104.5": "21600",
+                "750000.0_105.5": "22400",
+                "750000.0_109.5": "27800",
+                "750000.0_9999.0": "27800",
+                "999999.0_99.5": "18600",
+                "999999.0_100.5": "20400",
+                "999999.0_101.5": "20600",
+                "999999.0_102.5": "21000",
+                "999999.0_103.5": "21200",
+                "999999.0_104.5": "21600",
+                "999999.0_105.5": "22400",
+                "999999.0_109.5": "27800",
+                "999999.0_9999.0": "27800"
+              }
+            },
+            "deductions": [],
+            "deduction_logic_sets": [
+              {
+                "structure": {
+                  "type": "group",
+                  "operator": "OR",
+                  "items": [
+                    {
+                      "type": "rule",
+                      "field": "MAR_COVERAGE",
+                      "operator": "<",
+                      "value": "89.5"
+                    },
+                    {
+                      "type": "rule",
+                      "field": "MAR_L_FREQ_COV",
+                      "operator": "<",
+                      "value": "89.5"
+                    }
+                  ]
+                },
+                "multiplier": 0.9
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-02-07T20:42:02Z"
+      }
+    ]
+  }
+}
